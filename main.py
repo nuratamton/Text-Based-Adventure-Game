@@ -55,12 +55,18 @@ while True:
     move = input("What would you like to do? ").split()
 
 
-    action =  move[0].title()
-  
-    direction = move[1].title()
-    item = move[1].title()
+    try:
+        action =  move[0].title()
+        direction = move[1].title()
+        item = move[1].title()
+    except:
+        print("Invalid command")
+        print()
+        print('-'* 65)
+        print()
+        continue
 
-    if action == "Go":
+    if action== "Go":
         try:
             current_room = rooms[current_room][direction]
             print("You travelled", direction)
